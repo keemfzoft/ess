@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import { ESS } from "./ESS.js";
+
+        const ess = new ESS();
+
+        ess.addStore("sample");
+        
+        ess.sample.set("test.sample", { data: "This is a test data" });
+
+        console.log(ess.sample.get("test"));
+
+        ess.sample.update("test.sample", { data: "Updated sample data" });
+        
+        console.log(ess.sample.get("test"));
+    </script>
+</body>
+</html>
